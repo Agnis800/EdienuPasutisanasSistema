@@ -1,5 +1,5 @@
 # EdienuPasutisanasSistema
-Autors: Agnis Vanags
+<h2>Autors: Agnis Vanags</h2>
 
 Lietotāja funkcijas: 
 
