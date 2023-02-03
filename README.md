@@ -1,25 +1,21 @@
 # EdienuPasutisanasSistema
-<h2>Autors: Agnis Vanags</h2>
+<strong>Autors: Agnis Vanags</strong>
 
-Lietotāja funkcijas: 
+<h2>Lietotāja funkcijas:</h2>
+<ul>
+ <li>Apskatīt produktus no vairākām kategorijām</li>
+ <li>Pievienot preces grozam</li>
+ <li>Pasūtīt preces no groza</li>
+ <li>Sazināties ar uzņēmumu</li>
+ <li>Reģistrēšanās funkcija</li>
+<ul>
 
-Apskatīt produktus no vairākām kategorijām 
-
-Pievienot preces grozam 
-
-Pasūtīt preces no groza 
-
-Sazināties ar uzņēmumu 
-
-Reģistrēšanās funkcija 
-
-Administratora funkcijas: 
-
-Pievienot, rediģet vai dzēst produktus 
-
-Pievienot, rediģēt vai dzēst lietotājus 
-
-Saņemt lietotāju e-pastus un uz tiem atbildēt 
+<h2>Administratora funkcijas:</h2>
+<ul>
+ <li>Pievienot, rediģet vai dzēst produktus</li>
+ <li>Pievienot, rediģēt vai dzēst lietotājus</li>
+ <li>Saņemt lietotāju e-pastus un uz tiem atbildēt</li>
+</ul>
 
  
 
