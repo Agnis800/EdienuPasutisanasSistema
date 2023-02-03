@@ -8,7 +8,8 @@
  <li>Pasūtīt preces no groza</li>
  <li>Sazināties ar uzņēmumu</li>
  <li>Reģistrēšanās funkcija</li>
-<ul>
+</ul>
+
 <h2>Administratora funkcijas:</h2>
 <ul>
  <li>Pievienot, rediģet vai dzēst produktus</li>
