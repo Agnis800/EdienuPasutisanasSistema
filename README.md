@@ -9,7 +9,6 @@
  <li>Sazināties ar uzņēmumu</li>
  <li>Reģistrēšanās funkcija</li>
 <ul>
-
 <h2>Administratora funkcijas:</h2>
 <ul>
  <li>Pievienot, rediģet vai dzēst produktus</li>
