@@ -1,6 +1,6 @@
 # EdienuPasutisanasSistema
 <strong>Autors: Agnis Vanags</strong>
-Links uz dizainu: https://www.figma.com/file/ITOjyj78dBZlUjX7CmIpcS/%C4%92dienu-pas%C5%ABt%C4%AB%C5%A1anas-sist%C4%93ma?node-id=0%3A1&t=M90kDSbjNZETWdmQ-0
+<p>Links uz dizainu: https://www.figma.com/file/ITOjyj78dBZlUjX7CmIpcS/%C4%92dienu-pas%C5%ABt%C4%AB%C5%A1anas-sist%C4%93ma?node-id=0%3A1&t=M90kDSbjNZETWdmQ-0</p>
 
 <h2>Lietotāja funkcijas:</h2>
 <ul>
