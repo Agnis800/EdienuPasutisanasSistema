@@ -15,6 +15,7 @@
 <ul>
  <li>Pievienot, rediģet vai dzēst produktus</li>
  <li>Pievienot, rediģēt vai dzēst lietotājus</li>
+ <li>Pieņemt pasūtījumus</li>
  <li>Saņemt lietotāju e-pastus un uz tiem atbildēt</li>
 </ul>
 
