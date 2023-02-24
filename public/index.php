@@ -2,10 +2,8 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Route;
-use Symfony\Component\Routing\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Exception;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -13,12 +11,8 @@ use Symfony\Component\Routing\RequestContext;
 $templatePath = __DIR__.'/../views/';
 
 
-
 $request = Request::createFromGlobals();
 $routes = require __DIR__.'/../routes.php';
-
-
-
 
 
 $context = new RequestContext();

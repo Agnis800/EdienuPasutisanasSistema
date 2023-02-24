@@ -9,6 +9,7 @@ $routes = new RouteCollection();
 
 // Define your routes here
 $routes->add('home', new Route('/'));
+$routes->add('login', new Route('/login'));
 // $routes->add('about', new Route('/about'));
 
 return $routes;
