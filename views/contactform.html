@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/contactform.css"/>
 </head>
 <body>
     <header>
@@ -24,20 +24,25 @@
     <hr>
     <form action="action_page.php">
         <div class="container">
-            <h1>Login</h1>
+            <h1>Contact us</h1>
 
-            <label for="username"><b>Username</b></label>
-            <input type="text" name="username" id="username" required>
+            <label for="name"><b>Name</b></label>
+            <input type="text" name="name" id="name" required>
 
-            <label for="password"><b>Password</b></label>
-            <input type="password" name="password" id="password" required>
+            <label for="surname"><b>Surname</b></label>
+            <input type="text" name="surname" id="surname" required>
 
+            <label for="e-mail"><b>E-mail</b></label>
+            <input type="text" name="e-mail" id="e-mail" required>
+
+            <label for="subject"><b>Subject</b></label>
+            <input type="text" name="subject" id="subject" required>
+
+            <label for="message"><b>Message</b></label>
+            <textarea id="message" name="message" style="height:200px" required></textarea>
         </div>
 
-        <button type="submit" class="loginbtn">Login</button>
-        <div class="container signin">
-            <p>Don't have an account? <a href="/register">Register</a>.</p>
-        </div>
-    </form>    
+        <button type="submit" class="submitbtn">Submit</button>
+    </form>
 </body>
 </html>

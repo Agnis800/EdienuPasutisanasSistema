@@ -12,5 +12,6 @@ $routes->add('home', new Route('/'));
 $routes->add('login', new Route('/login'));
 $routes->add('register', new Route('/register'));
 $routes->add('cart', new Route('/cart'));
+$routes->add('contactform', new Route('/contactform'));
 
 return $routes;
