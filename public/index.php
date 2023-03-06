@@ -24,11 +24,7 @@ $attributes = $matcher->match($request->getPathInfo());
 try {
     $request->attributes->add($matcher->match($request->getPathInfo()));
 
-    // echo '<pre>';
-    // var_dump($request); 
-    // echo '</pre>';
-
-    // exit;
+    
 
     $response = call_user_func($request->attributes->get('_controller'), $request);
 } catch (Routing\Exception\ResourceNotFoundException $exception) {

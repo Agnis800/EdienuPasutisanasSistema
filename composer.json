@@ -13,6 +13,18 @@
     ],
     "require": {
         "symfony/routing": "^6.2",
-        "symfony/http-foundation": "^6.2"
-    }
+        "symfony/http-foundation": "^6.2",
+        "symfony/var-dumper": "^6.2"
+    },
+    "scripts": {
+        "serve": [
+          "Composer\\Config::disableProcessTimeout",
+          "@php -S localhost:0 -t public/"
+        ],
+        "test": "php vendor/bin/phpunit --testdox"
+      },
+      "scripts-descriptions": {
+        "serve": "Starts PHP development web server on a random (unused) port.",
+        "test": "Runs unit tests."
+      }
 }
