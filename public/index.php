@@ -21,11 +21,17 @@ $matcher = new UrlMatcher($routes, $context);
 
 $attributes = $matcher->match($request->getPathInfo());
 
+function render_template(Request $request, $templateFile)
+{
+    extract($request->attributes->all(), EXTR_SKIP);
+    ob_start();
+    include sprintf(__DIR__.'/../views/' . $templateFile, $_route);
+
+    return new Response(ob_get_clean());
+}
+
 try {
     $request->attributes->add($matcher->match($request->getPathInfo()));
-
-    
-
     $response = call_user_func($request->attributes->get('_controller'), $request);
 } catch (Routing\Exception\ResourceNotFoundException $exception) {
 

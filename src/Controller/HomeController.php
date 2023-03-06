@@ -8,7 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 class HomeController {
 
     public function homeAction(Request $request) {
-        echo 'home action';
+
+        return render_template($request, 'home.html');
     }
 
 }
