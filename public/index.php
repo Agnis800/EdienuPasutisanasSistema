@@ -22,11 +22,15 @@ $matcher = new UrlMatcher($routes, $context);
 $attributes = $matcher->match($request->getPathInfo());
 
 try {
-    extract($matcher->match($request->getPathInfo()), EXTR_SKIP);
-    ob_start();
-    include sprintf($templatePath . '%s.html', $_route);
+    $request->attributes->add($matcher->match($request->getPathInfo()));
 
-    $response = new Response(ob_get_clean());
+    // echo '<pre>';
+    // var_dump($request); 
+    // echo '</pre>';
+
+    // exit;
+
+    $response = call_user_func($request->attributes->get('_controller'), $request);
 } catch (Routing\Exception\ResourceNotFoundException $exception) {
 
     $response = new Response('Not Found', 404);

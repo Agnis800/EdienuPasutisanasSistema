@@ -22,7 +22,7 @@
         <button class="button"><a href='/register'>Register</a></button>
     </header>
     <hr>
-    <form action="action_page.php">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="container">
             <h1>Contact us</h1>
 

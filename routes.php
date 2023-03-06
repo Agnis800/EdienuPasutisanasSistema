@@ -2,6 +2,7 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
+use App\Controller\ContactController;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
 
@@ -12,6 +13,8 @@ $routes->add('home', new Route('/'));
 $routes->add('login', new Route('/login'));
 $routes->add('register', new Route('/register'));
 $routes->add('cart', new Route('/cart'));
-$routes->add('contactform', new Route('/contactform'));
+$routes->add('contactform', new Route('/contactform',[
+    '_controller' => [new ContactController(), 'contactAction'],
+]));
 
 return $routes;
