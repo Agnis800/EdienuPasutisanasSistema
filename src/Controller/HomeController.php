@@ -9,7 +9,7 @@ class HomeController {
 
     public function homeAction(Request $request) {
 
-        return render_template($request, 'home.html');
+        return render_template($request, 'home.php');
     }
 
 }
