@@ -7,10 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Exception;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\ErrorHandler\Debug;
+
 
 $templatePath = __DIR__.'/../views/';
 
-
+Debug::enable();
 $request = Request::createFromGlobals();
 $routes = require __DIR__.'/../routes.php';
 
