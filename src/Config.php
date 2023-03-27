@@ -3,5 +3,5 @@
 namespace App;
 
 class Config {
-    const PATH_TO_SQLITE_FILE = '../edieni.db';
+    const PATH_TO_SQLITE_FILE = '../edieni.sqlite';
 }
