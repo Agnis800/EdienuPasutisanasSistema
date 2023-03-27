@@ -12,11 +12,9 @@
         <div class="title">
             <h2>AV FOOD</h2>
         </div>
-        <div class="pages">
-          <a href="/">Catalogue</a>
-          <a href="">Your account</a>
-          <a href="/contactform">Contact us</a>
-        </div>
+        <button class="button"><a href="/">Catalogue</a></button>
+        <button class="button"><a href="">Your account</a></button>
+        <button class="button"><a href="/contactform">Contact us</a></button>
         <button class="button"><a href="/cart">Your cart</a></button>
         <button class="button"><a href="/login">Login</a></button>
         <button class="button"><a href='/register'>Register</a></button>

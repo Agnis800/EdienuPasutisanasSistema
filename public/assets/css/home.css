@@ -1,41 +1,42 @@
 .title {
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 32px;
-    left: 18px;
+    left: 0px;
     top: 0px;
 
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 25px;
+    line-height: 20px;
 
     color: #FF6347;
 }
 
-.pages {
+/*.pages {
     position: relative;
     width: 400px;
     height: 100px;
     left: 700px;
     top: 30px;
 
-    font-family: 'Inika';
+    font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
     line-height: 21px;
 /* identical to box height */
 
+/*
     color: #000000;
 }
+*/
 
 .button {
     /*position: absolute;
     right: 16px;
     top: 8px;*/
-  
     background-color: #FF6347;
     border: none;
     color: white;
@@ -44,7 +45,7 @@
     text-decoration: none;
     display: inline-block;
     
-    font-family: 'Inika';
+    font-family: 'Georgia';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -60,7 +61,7 @@
     text-decoration: none;
     display: inline-block;
     
-    font-family: 'Inika';
+    font-family: 'Georgia';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
