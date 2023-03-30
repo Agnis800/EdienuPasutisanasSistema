@@ -26,6 +26,24 @@ class RegisterController {
         if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Validate username
+            /*if(empty(trim($_POST["username"]))) {
+                $Username_err = "Please enter a username.";
+            } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
+                $Username_err = "Username can only contain letters, numbers, and underscores.";
+            } else {
+                $sql = "SELECT Username FROM USER WHERE Username = ?"; //! may not work on sql due to syntax
+                $stmt = $this->connection->prepare($sql);
+                $stmt->execute([trim($_POST["username"])]);
+
+            }
+                
+                $result = $stmt->fetchAll();
+                if (! empty($result)) {
+                    $Username_err = 'Username is already taken';
+                }
+            */
+
+            // Validate username
             if(empty(trim($_POST["username"]))) {
                 $Username_err = "Please enter a username.";
             } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
@@ -34,13 +52,13 @@ class RegisterController {
                 $sql = "SELECT Username FROM USER WHERE Username = ?"; //! may not work on sql due to syntax
                 $stmt = $this->connection->prepare($sql);
                 $stmt->execute([trim($_POST["username"])]);
+
+            }
                 
                 $result = $stmt->fetchAll();
                 if (! empty($result)) {
                     $Username_err = 'Username is already taken';
                 }
-
-            }
 
             // Validate first name
             if(empty(trim($_POST["first_name"]))){
@@ -95,7 +113,6 @@ class RegisterController {
 
             // TODO
             // dazi lauki ir tuksi, apskatit kas notiek validacijas kodaa
-            // dump($username, $first_name, $last_name, $e_mail, $phone_number, $password); die;
 
 
             if(empty($Username_err) && empty($FirstName_err) && empty($LastName_err) && empty($Email_err) && empty($PhoneNumber_err) && empty($Password_err) && empty($ConfirmPassword_err)) {
