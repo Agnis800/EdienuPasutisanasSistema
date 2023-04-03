@@ -28,24 +28,59 @@
 
             <label for="username"><b>Username</b></label>
             <input type="text" name="username" id="username" required>
+            <div>
+            <?php if (! empty($Username_err)): ?>
+                <span class="error"><?php echo $Username_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="first_name"><b>First name</b></label>
             <input type="text" name="first_name" id="first_name" required>
+            <div>
+            <?php if (! empty($FirstName_err)): ?>
+                <span class="error"><?php echo $FirstName_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="last_name"><b>Last name</b></label>
             <input type="text" name="last_name" id="last_name" required>
+            <div>
+            <?php if (! empty($LastName_err)): ?>
+                <span class="error"><?php echo $LastName_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="e_mail"><b>E-mail</b></label>
             <input type="text" name="e_mail" id="e_mail" required>
+            <div>
+            <?php if (! empty($Email_err)): ?>
+                <span class="error"><?php echo $Email_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="phone_number"><b>Phone number</b></label>
             <input type="text" name="phone_number" id="phone_number" required>
+            <div>
+            <?php if (! empty($PhoneNumber_err)): ?>
+                <span class="error"><?php echo $PhoneNumber_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="password"><b>Password</b></label>
             <input type="password" name="password" id="password" required>
+            <div>
+            <?php if (! empty($Password_err)): ?>
+                <span class="error"><?php echo $Password_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="confirm_password"><b>Confirm password</b></label>
             <input type="password" name="confirm_password" id="confirm_passowrd" required>
+            <div>
+            <?php if (! empty($ConfirmPassword_err)): ?>
+                <span class="error"><?php echo $ConfirmPassword_err;?></span>
+            <?php endif;?>
+            </div>
         </div>
 
         <button type="submit" class="registerbtn">Register</button>
