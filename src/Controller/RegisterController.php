@@ -26,24 +26,6 @@ class RegisterController {
         if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Validate username
-            /*if(empty(trim($_POST["username"]))) {
-                $Username_err = "Please enter a username.";
-            } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
-                $Username_err = "Username can only contain letters, numbers, and underscores.";
-            } else {
-                $sql = "SELECT Username FROM USER WHERE Username = ?"; //! may not work on sql due to syntax
-                $stmt = $this->connection->prepare($sql);
-                $stmt->execute([trim($_POST["username"])]);
-
-            }
-                
-                $result = $stmt->fetchAll();
-                if (! empty($result)) {
-                    $Username_err = 'Username is already taken';
-                }
-            */
-
-            // Validate username
             if(empty(trim($_POST["username"]))) {
                 $Username_err = "Please enter a username.";
             } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
@@ -52,14 +34,17 @@ class RegisterController {
                 $sql = "SELECT Username FROM USER WHERE Username = ?"; //! may not work on sql due to syntax
                 $stmt = $this->connection->prepare($sql);
                 $stmt->execute([trim($_POST["username"])]);
-
-            }
                 
-                $result = $stmt->fetchAll();
+                $result = $stmt->fetchColumn();
+    
                 if (! empty($result)) {
                     $Username_err = 'Username is already taken';
+                } else {
+                    $Username = trim($_POST["username"]);
                 }
+            }
 
+                
             // Validate first name
             if(empty(trim($_POST["first_name"]))){
                 $FirstName_err = "Please enter a first name.";
@@ -79,7 +64,7 @@ class RegisterController {
             }
             
             // Validate e-mail
-            if(empty(trim($_POST["e_mail"]))){
+            if(!filter_var($_POST["e_mail"], FILTER_VALIDATE_EMAIL)){
                 $Email_err = "Please enter a e-mail.";
             } else{
                     $Email = trim($_POST["e_mail"]);
@@ -137,14 +122,21 @@ class RegisterController {
                     echo "Oops! Something went wrong. Please try again later.";
                 }
 
-            }
+            } 
                 
-
         }
         // Using PDO api, we close db connection like this
         $this->connection = null;
 
-        return render_template($request, 'register.php');
+        return render_template($request, 'register.php', [
+            'Username_err' => $Username_err,
+            'FirstName_err' => $FirstName_err,
+            'LastName_err' => $LastName_err,
+            'Email_err' => $Email_err,
+            'PhoneNumber_err' => $PhoneNumber_err,
+            'Password_err' => $Password_err,
+            'ConfirmPassword_err' => $ConfirmPassword_err,
+        ]);
     }
 
 }
