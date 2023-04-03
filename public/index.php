@@ -23,8 +23,9 @@ $matcher = new UrlMatcher($routes, $context);
 
 $attributes = $matcher->match($request->getPathInfo());
 
-function render_template(Request $request, $templateFile)
+function render_template(Request $request, $templateFile, $args = [])
 {
+    extract($args, EXTR_SKIP);
     extract($request->attributes->all(), EXTR_SKIP);
     ob_start();
     include sprintf(__DIR__.'/../views/' . $templateFile, $_route);
