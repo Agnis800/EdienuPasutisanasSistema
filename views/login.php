@@ -22,7 +22,7 @@
         <button class="button"><a href='/register'>Register</a></button>
     </header>
     <hr>
-    <form action="action_page.php">
+    <form action="/login">
         <div class="container">
             <h1>Login</h1>
 
