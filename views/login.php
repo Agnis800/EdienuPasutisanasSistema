@@ -22,15 +22,25 @@
         <button class="button"><a href='/register'>Register</a></button>
     </header>
     <hr>
-    <form action="/login">
+    <form action="/login" method="post">
         <div class="container">
             <h1>Login</h1>
 
             <label for="username"><b>Username</b></label>
             <input type="text" name="username" id="username" required>
+            <div>
+            <?php if (! empty($username_err)): ?>
+                <span class="error"><?php echo $username_err;?></span>
+            <?php endif;?>
+            </div>
 
             <label for="password"><b>Password</b></label>
             <input type="password" name="password" id="password" required>
+            <div>
+            <?php if (! empty($password_err)): ?>
+                <span class="error"><?php echo $password_err;?></span>
+            <?php endif;?>
+            </div>
 
         </div>
 

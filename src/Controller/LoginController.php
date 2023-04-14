@@ -32,12 +32,11 @@ class LoginController { /* start of logincontroller
         $username = $password = "";
         $username_err = $password_err = $login_err = "";
 
-        if($_SERVER["REQUEST_METHOD"] == "POST"){ /* start of validation (POST) */
-
-            if(empty(trim($_POST["username"]))){
+        if($request->getMethod() == "POST"){ /* start of validation (POST) */
+            if(empty(trim($request->get('username')))){
                 $username_err = "Please enter username.";
             } else{
-                $username = trim($_POST["username"]);
+                $username = trim($request->get('username'));
             }
 
             if(empty(trim($_POST["password"]))){
@@ -47,47 +46,41 @@ class LoginController { /* start of logincontroller
             }
 
             if(empty($username_err) && empty($password_err)){ /* start of credental validation */
-                $sql = "SELECT UserID, Username, Password FROM users WHERE Username = :Username";
+                $sql = "SELECT `UserID`, `Username`, `Password` FROM `USER` WHERE `Username` = :Username";
 
-            $stmt = $this->connection->prepare($sql);
-            $stmt->execute([trim($_POST["username"])]);
-                
-            $result = $stmt->fetchColumn();
+                $stmt = $this->connection->prepare($sql);
+                $stmt->execute([$username]);
+                $row = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-            if($stmt->execute()){ /* start of verification if */ /* !!!start of questenable part!!! */
-                // Check if username exists, if yes then verify password
-                if($stmt->rowCount() == 1){ /* start of rowCount */
-                    if($row = $stmt->fetch()){ /* start of login check */
-                        $id = $row["id"];
-                        $username = $row["id"];
-                        $hashed_password = $row["password"];
-                        if(password_verify($password, $hashed_password)){ /* start of password verification */
-                            session_start();
+                if(! empty($row)) { /* start of rowCount */
+                        $id = $row["UserID"];
+                        $username = $row["Username"];
+                        $hashed_password = $row["Password"];
+                        if(password_verify($password, $hashed_password)) { /* start of password verification */
 
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
                             // Redirect user to home page
-                            header("location: home.php");
+                            header("location: /");
                         } else{
                             $login_err = "Invalid username or password.";
                         }
                        /* end of password verification */
-                    } /* end of rowCount */ else{
-                        $login_err = "Invalid username or password";
-                    }
                 } /* end of verification if */
                   else{
                     echo "Oops! Something went wrong. Please try again later.";
                 }
 
                 unset($stmt);
-            } /* !!!end of questenable part!!! */
             } /* end of credental validation */
 
             unset($pdo);
-        return render_template($request, 'login.php');
+            return render_template($request, 'login.php');
         } /* end of of validation (POST) */
+
+        return render_template($request, 'login.php'); // this fixed "Call to a member function send() on null" error
+
     } /* end of loginaction */
 } /* end of logincontroller */
